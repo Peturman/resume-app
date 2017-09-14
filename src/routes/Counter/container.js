@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import CounterView from './view'
+import React from 'react'
 import * as actions from './actions'
 const mapDispatchToProps = {
   ...actions
@@ -9,4 +9,9 @@ const mapStateToProps = (state) => ({
   counter: state.counter
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterView)
+const Container = (props) => {
+  const { children, ...others } = props
+  return React.cloneElement(children, others)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Container)
