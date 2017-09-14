@@ -1,6 +1,11 @@
-.idea/
+.DS_STORE
 *.log
-npm-debug*
+
 node_modules
+
 dist
-yarn.lock
+output
+coverage
+
+.idea/
+deploy.sh
