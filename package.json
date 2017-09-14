@@ -80,7 +80,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Peturman/webpack-develop-startkit.git"
+    "url": "git@github.com:Peturman/resume-app.git"
   },
   "author": "c <c@nice0.com> (http://nice0.com)",
   "license": "MIT",

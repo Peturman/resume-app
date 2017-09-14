@@ -20,4 +20,10 @@ export const Counter = (props) => {
   )
 }
 
+Counter.propTypes = {
+  counter : React.PropTypes.object,
+  increment : React.PropTypes.func,
+  doubleAsync : React.PropTypes.func
+}
+
 export default Counter
