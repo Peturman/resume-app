@@ -14,7 +14,7 @@ const querystring = require('querystring')
 const proxyConfig = require('./proxy.config')
 
 const app = express()
-const localServer = `http://127.0.0.1:${project.server_port}`
+// const localServer = `http://127.0.0.1:${project.server_port}`
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'))
@@ -100,7 +100,7 @@ if (project.env === 'development') {
   devMiddleware.waitUntilValid(() => {
    // when env is testing, don't need open it
     if (project.open_browser) {
-      opn(localServer)
+      // opn(localServer)
     }
   })
 } else {
@@ -125,10 +125,10 @@ if (project.env === 'development') {
   app.use(project.compiler_base_route, routes)
   app.use('*', function (req, res) {
     res.set('content-type', 'text/html')
-    res.end(`<a href=${localServer}>访问os_mobile</a>`)
+    // res.end(`<a href=${localServer}>访问os_mobile</a>`)
   })
   if (project.open_browser) {
-    opn(localServer)
+    // opn(localServer)
   }
 }
 
