@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import 'static/styles/core.less'
 import './CoreLayout.less'
 import ScrollToTop from './ScrollToTop'
 

@@ -6,11 +6,10 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  counter: state.counter
+  article: state.article
 })
 
 const Container = (props) => {
-  console.log(props)
   const { children, ...others } = props
   return React.cloneElement(children, others)
 }

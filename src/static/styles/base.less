@@ -1,28 +1,4 @@
-// @import 'base.css';
-@import '~normalize.css/normalize.css';
-@import './common.less';
-
-// Some best-practice CSS that's useful for most apps
-// Just remove them if they're not what you want
-html {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-// reset
-div, span, applet, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -41,16 +17,14 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: PingFangSC-Regular, sans-serif;
 }
-
+/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1;
 }
 ol, ul {
   list-style: none;

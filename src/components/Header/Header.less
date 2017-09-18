@@ -1,14 +1,45 @@
+@import "../../static/styles/helper";
 
 .header {
-  margin-bottom: .2rem;
-  padding: 0 .7rem; 
-  height: 1rem;
-  line-height: 1rem;
-  background-color: #4997ba;
+  padding: 0 .5rem;
+  height: 3rem;
   text-align: center;
   color: #fff;
-  font-size: .34rem;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
+  font-size: @font-20;
+  display: flex;
+  justify-content: space-between;
+  background: url("../../static/images/banner.jpg") top center no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  min-width: 1260px;
+}
+
+.navLeft {
+  height: 1rem;
+  line-height: 1rem;
+  align-items: flex-start;
+  a {
+    text-decoration: none;
+    margin-right: .5rem;
+    font-size: @font-26;
+    color: white;
+  }
+}
+
+.navMiddle {
+  font-size: @font-40;
+  height: 3rem;
+  line-height: 3rem;
+}
+
+.navRight {
+  align-items: flex-start;
+  height: 1rem;
+  line-height: 1rem;
+  a {
+    text-decoration: none;
+    margin-left: .5rem;
+    font-size: @font-26;
+    color: white;
+  }
 }

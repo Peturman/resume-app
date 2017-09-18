@@ -1,7 +1,7 @@
 const express = require('express')
 const debug = require('debug')('app:server')
 const path = require('path')
-const opn = require('opn')
+// const opn = require('opn')
 const ejs = require('ejs')
 const routes = require('./routes')
 const webpack = require('webpack')

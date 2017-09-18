@@ -1,14 +1,7 @@
-.os-dashboard {
-  .am-card {
-    background: #F9F9F9;
-  }
-  .am-card-body {
-    border-top: none;
-  }
-}
+@import "../../../static/styles/helper";
 
 .home-container{
-  font-size: 14px;
+  font-size: @font-20;
   width: 600px;
   padding: 20px;
 }
@@ -16,4 +9,93 @@
 .link-box{
   display: block;
   padding: 10px;
+}
+
+.article-list {
+  width: 75%;
+  margin-top: 20px;
+}
+
+.article-detail {
+  width: 75%;
+  margin-top: 20px;
+  box-shadow: 0 0 3px #ccc;
+  border-radius: 3px;
+  background: white;
+}
+
+.article-tiem {
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+  box-shadow: 0 0 3px #ccc;
+  border-radius: 3px;
+  background: white;
+  header {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    border-bottom: 1px solid #dfdfdf;
+    a {
+      font-size: @font-40;
+      color: @state-info;
+    }
+    .time {
+      font-size: @font-20;
+      margin-right: 20px;
+    }
+    .label {
+      font-size: @font-20;
+      height: 20px;
+      line-height: 20px;
+      padding: 1px 5px;
+      background: @state-label;
+      color: white;
+      border-radius: 3px;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+  }
+  footer {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    font-size: @font-24;
+    border-top: 1px solid #dfdfdf;
+    .comment {
+      margin-right: 20px;
+    }
+    .spot {
+
+    }
+  }
+}
+
+.sort-list {
+  width: 25%;
+  padding: 0 0 20px 40px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  h5 {
+    height: 40px;
+    line-height: 40px;
+    font-size: @font-28;
+    color: @state-tips;
+  }
+  ul {
+    color: #777;
+    text-shadow: 0 1px #fff;
+    background: #ddd;
+    box-shadow: 0 -1px 4px #ccc inset;
+    padding: 15px;
+    border-radius: 3px;
+    li {
+      line-height: 20px;
+      word-wrap: break-word;
+      font-size: @font-24;
+      a {
+        color: #258fb8;
+      }
+    }
+  }
 }
