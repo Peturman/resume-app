@@ -1,12 +1,13 @@
 import baseAPIs from './base'
 
 export const types = {
-  getOpporDetail: 'getOpporDetail',
-  getIndustry: 'getIndustry',
-  getContacts: 'getContacts',
-  getTrackList: 'getTrackList',
-  getTrackType: 'getTrackType',
-  postReject: 'postReject'
+  createAccessToken: 'createAccessToken',
+  refreshAccessToken: 'refreshAccessToken',
+  getUserInfo: 'getUserInfo',
+  getArticleList: 'getArticleList',
+  getArticle: 'getArticle',
+  createArticle: 'createArticle',
+  updateArticle: 'updateArticle'
 }
 
 export const CUSTOMER_STATUS = {

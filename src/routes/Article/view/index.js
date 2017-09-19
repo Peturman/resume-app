@@ -5,20 +5,19 @@ import ReactMarkDown from 'react-markdown'
 import './style.less'
 
 export class Article extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      article: '##### 有问题反馈在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流* 邮件(dev.hubo#gmail.com, 把#换成@) * QQ: 287759234* weibo: [@草依山](http://weibo.com/ihubo) * twitter: [@ihubo](http://twitter.com/ihubo)'
-    }
+  componentDidMount () {
+    this.props.getArticle(this.props.location.query.id)
   }
-
   render () {
+    const { article } = this.props.article
+    const { content = '', title } = article
     return (
       <div>
-        <Header title='全栈之路'/>
+        <Header title='全栈之路' />
         <div className='blog-container space-between'>
           <section className='article-detail'>
-            <ReactMarkDown source={this.state.article} className='markdown-body'/>
+            <h2>{title}</h2>
+            <ReactMarkDown source={content} className='markdown-body' />
           </section>
           <aside className='sort-list'>
             <h5>分类</h5>
@@ -31,6 +30,12 @@ export class Article extends Component {
       </div>
     )
   }
+}
+
+Article.propTypes = {
+  getArticle: React.PropTypes.function,
+  article: React.PropTypes.object,
+  location: React.PropTypes.object
 }
 
 export default Article

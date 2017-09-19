@@ -1,3 +1,4 @@
+import fetchAPI from 'api'
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -8,27 +9,11 @@ export const set = (params) => {
   }
 }
 
-export const increment = () => {
+// 获取文章列表
+export const getArticle = (id) => {
   return (dispatch, getState) => {
-    const { count } = getState().home
-    dispatch(set({ count: count + 1 }))
-  }
-}
-
-/*  This is a thunk, meaning it is a function that immediately
- returns a function for lazy evaluation. It is incredibly useful for
- creating async actions, especially when combined with redux-thunk! */
-
-export const doubleAsync = () => {
-  return (dispatch, getState) => {
-    return new Promise((resolve) => {
-      const { count } = getState().home
-      setTimeout(() => {
-        dispatch(set({
-          count: count * 2
-        }))
-        resolve()
-      }, 200)
+    fetchAPI('getArticleList', id).then((data) => {
+      dispatch(set({ article: data.article }))
     })
   }
 }

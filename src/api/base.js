@@ -1,94 +1,46 @@
+const serverHost = 'http://localhost:1337'
+
 export default {
-  getOpporDetail: {
-    url: '/opportunity/detail/',
-    method: 'GET'
+
+  // 授权生成token
+  createAccessToken: {
+    url: `${serverHost}/api/oauth/token`,
+    method: `POST`
   },
-  getIndustry: {
-    url: '/opportunity/industry/',
-    method: 'GET'
+
+  // 恢复token
+  refreshAccessToken: {
+    url: `${serverHost}/api/oauth/token`,
+    method: `POST`
   },
-  getContacts: {
-    url: '/opportunity/contacts/',
-    method: 'GET'
+
+  // 获取用户信息
+  getUserInfo: {
+    url: `${serverHost}/api/users/info`,
+    method: `GET`
   },
-  getTrackList: {
-    url: '/opportunity/tracking/list/',
-    method: 'GET'
+
+  // 获取文章列表
+  getArticleList: {
+    url: `${serverHost}/api/articles`,
+    method: `GET`
   },
-  getPhoneRecord: {
-    url: '/opportunity/phone_record/list/',
-    method: 'GET'
+
+  // 获取文章详情
+  getArticle: {
+    url: `${serverHost}/api/articles`,
+    method: `GET`
   },
-  getRecordFile: {
-    url: '/call_center/out_call/record_file/',
-    method: 'GET'
+
+  // 发布文章
+  createArticle: {
+    url: `${serverHost}/api/articles`,
+    method: `POST`
   },
-  getTrackType: {
-    url: '/opportunity/tracking/type/',
-    method: 'GET'
-  },
-  postReject: {
-    url: '/opportunity/reject/',
-    method: 'POST'
-  },
-  getRechargeData: {
-    url: '/os/data/recharge_data/',
-    method: 'GET'
-  },
-  getCustomerNum: {
-    url: '/os/data/customer_num/',
-    method: 'GET'
-  },
-  getCustomers: {
-    url: '/os/data/customer/',
-    method: 'GET'
-  },
-  getConversion: {
-    url: '/os/data/conversion/',
-    method: 'GET'
-  },
-  getCustomerInfo: {
-    url: '/opportunity/list/',
-    method: 'GET'
-  },
-  getRemarkInfo: {
-    url: '/sales/remark/getRemark/',
-    method: 'GET'
-  },
-  getVisitList: {
-    url: '/sales/visit/list/',
-    method: 'GET'
-  },
-  postVisitClosed: {
-    url: '/sales/visit/closed/',
-    method: 'POST'
-  },
-  postApplyAccount: {
-    url: '/opportunity/apply_account/',
-    method: 'POST'
-  },
-  postFollowPlan: {
-    url: '/sales/visit/create/',
-    method: 'POST'
-  },
-  postCustomerCreate: {
-    url: '/opportunity/customer/create/',
-    method: 'POST'
-  },
-  getFollowDetail: {
-    url: '/sales/visit/detail/',
-    method: 'GET'
-  },
-  checkCompanyName: {
-    url: '/opportunity/check/name/',
-    method: 'POST'
-  },
-  protectionDelay: {
-    url: '/opportunity/protection/delay/',
-    method: 'POST'
-  },
-  protectionCancel: {
-    url: '/opportunity/protection/delay/cancel/',
-    method: 'POST'
+
+  // 修改文章
+  updateArticle: {
+    url: `${serverHost}/api/articles/:id`,
+    method: `PUT`
   }
 }

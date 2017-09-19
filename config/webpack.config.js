@@ -6,7 +6,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJsParallelPlugin = require('webpack-uglify-parallel')
 const project = require('./project.config')
 const debug = require('debug')('app:config:webpack')
-const path = require('path');
 
 const __DEV__ = project.globals.__DEV__
 const __PROD__ = project.globals.__PROD__
