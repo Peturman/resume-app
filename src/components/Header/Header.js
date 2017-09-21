@@ -6,13 +6,13 @@ export const Header = (props) => (
   <header className='header'>
     <div className='navLeft'>
       <Link to='/'>首页</Link>
-      <Link to='/'>归档</Link>
+      <Link to='/article'>归档</Link>
     </div>
     <div className='navMiddle'>
       {props.title}
     </div>
     <div className='navRight'>
-      <Link to='/'>关于</Link>
+      <Link to='/login'>登录</Link>
       <Link to='/'>留言</Link>
     </div>
   </header>

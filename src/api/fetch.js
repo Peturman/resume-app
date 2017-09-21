@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch'
+import { browserHistory } from 'react-router'
 
 /**
  * 检查接口响应状态码
@@ -26,7 +27,8 @@ function getErrorMsgByStatusCode (code) {
   if (code >= 400 && code < 500) {
     switch (code) {
       case 401:
-        result = '您尚未登录,请登录后访问.'
+        result = '请登录.'
+        browserHistory.replace('/login')
         break
       case 403:
         result = '您所请求的资源被禁止访问.'
@@ -52,14 +54,6 @@ function getErrorMsgByStatusCode (code) {
  * @param {Object} e 错误信息
  */
 function handleError (e) {
-  console.log('request failed', e)
-  if (!e.response) {
-    // 断网情况
-    e.message = '断网啦'
-    alert(e.message)
-  } else {
-    alert(e.message)
-  }
   throw e
 }
 

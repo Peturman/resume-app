@@ -16,7 +16,7 @@ export default function fetchAPI (type, body, multipartFormData = false) {
   if (apis[type].method === 'GET') {
     if (body && body.indexOf('=') !== -1) {
       url = apis[type].url + `?${body}`
-    } else {
+    } else if (body) {
       url = apis[type].url + `/${body}`
     }
   } else {

@@ -52,8 +52,8 @@ export class Home extends Component {
 }
 
 Home.propTypes = {
-  getArticleList: React.PropTypes.function,
-  createArticle: React.PropTypes.function,
+  getArticleList: React.PropTypes.func,
+  createArticle: React.PropTypes.func,
   home: React.PropTypes.object
 }
 

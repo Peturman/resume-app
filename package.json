@@ -10,6 +10,7 @@
     "lint:fix": "npm run lint -- --fix",
     "start": "better-npm-run start",
     "electron": "better-npm-run electron",
+    "pm2": "pm2 start bin/dev-server.js",
     "dev": "better-npm-run dev",
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --watch",

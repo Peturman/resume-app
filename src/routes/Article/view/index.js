@@ -33,7 +33,7 @@ export class Article extends Component {
 }
 
 Article.propTypes = {
-  getArticle: React.PropTypes.function,
+  getArticle: React.PropTypes.func,
   article: React.PropTypes.object,
   location: React.PropTypes.object
 }

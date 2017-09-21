@@ -1,4 +1,5 @@
-const serverHost = 'http://localhost:1337'
+const serverHost = 'http://120.77.147.197:3389'
+// const serverHost = 'http://localhost:3389'
 
 export default {
 
