@@ -28,7 +28,7 @@ function getErrorMsgByStatusCode (code) {
     switch (code) {
       case 401:
         result = '请登录.'
-        browserHistory.replace('/login')
+        browserHistory.replace('/user/login')
         break
       case 403:
         result = '您所请求的资源被禁止访问.'

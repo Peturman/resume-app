@@ -1,11 +1,17 @@
-const serverHost = 'http://120.77.147.197:3389'
-// const serverHost = 'http://localhost:3389'
+// const serverHost = 'http://120.77.147.197:3389'
+const serverHost = 'http://localhost:3389'
 
 export default {
 
-  // 授权生成token
+  // 登录，授权生成token
   createAccessToken: {
     url: `${serverHost}/api/oauth/token`,
+    method: `POST`
+  },
+
+  // 注册
+  createUser: {
+    url: `${serverHost}/api/users/create`,
     method: `POST`
   },
 

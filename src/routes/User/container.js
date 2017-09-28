@@ -6,7 +6,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  article: state.article
+  user: state.user
 })
 
 const Container = (props) => {

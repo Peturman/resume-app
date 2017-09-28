@@ -4,6 +4,7 @@ export const types = {
   createAccessToken: 'createAccessToken',
   refreshAccessToken: 'refreshAccessToken',
   getUserInfo: 'getUserInfo',
+  createUser: 'createUser',
   getArticleList: 'getArticleList',
   getArticle: 'getArticle',
   createArticle: 'createArticle',

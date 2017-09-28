@@ -10,7 +10,7 @@ export class Home extends Component {
   }
 
   render () {
-    const { home, createArticle } = this.props
+    const { home } = this.props
     const { articleList = [] } = home
     const list = []
 
@@ -34,8 +34,7 @@ export class Home extends Component {
     })
     return (
       <div>
-        <Header title='全栈之路' />
-        <button onClick={createArticle}>发布文章({articleList.length})</button>
+        <Header selectedKey='HOME' />
         <div className='blog-container space-between'>
           <ul className='article-list'>{ list }</ul>
           <aside className='sort-list'>
@@ -53,7 +52,6 @@ export class Home extends Component {
 
 Home.propTypes = {
   getArticleList: React.PropTypes.func,
-  createArticle: React.PropTypes.func,
   home: React.PropTypes.object
 }
 

@@ -1,45 +1,79 @@
 @import "../../static/styles/helper";
 
 .header {
-  padding: 0 .5rem;
-  height: 3rem;
+  height: 1rem;
   text-align: center;
   color: #fff;
   font-size: @font-20;
-  display: flex;
-  justify-content: space-between;
-  background: url("../../static/images/banner.jpg") top center no-repeat;
   background-size: cover;
+  background: white;
   box-sizing: border-box;
-  min-width: 1260px;
-}
 
-.navLeft {
-  height: 1rem;
-  line-height: 1rem;
-  align-items: flex-start;
-  a {
-    text-decoration: none;
-    margin-right: .5rem;
-    font-size: @font-26;
-    color: white;
+  .width-limit {
+    min-width: 786px;
+    max-width: 1460px;
+    position: relative;
+    width: 100%;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
   }
-}
+  .nav {
+    height: 1rem;
+    .nav-left, .nav-right {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      a {
+        height: .6rem;
+        line-height: .6rem;
+        margin: auto .2rem;
+        padding: 0 .3rem;
+        box-sizing: border-box;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        color: @state-tips;
+        &:hover {
+          color: @state-info;
+          border: 1px solid @state-info;
+        }
+        &.active {
+          color: white;
+          border: 1px solid @state-info;
+          background: @state-info;
+        }
+      }
 
-.navMiddle {
-  font-size: @font-40;
-  height: 3rem;
-  line-height: 3rem;
-}
+      span {
+        height: .6rem;
+        line-height: .6rem;
+        margin: auto .2rem;
+        box-sizing: border-box;
+        color: @state-tips;
+      }
+    }
+  }
 
-.navRight {
-  align-items: flex-start;
-  height: 1rem;
-  line-height: 1rem;
-  a {
-    text-decoration: none;
-    margin-left: .5rem;
-    font-size: @font-26;
-    color: white;
+  .logo, .write {
+    position: absolute;
+    top: 0;
+    height: 1rem;
+    width: 100px;
+    text-align: center;
+  }
+  .logo {
+    left: 0;
+  }
+  .write {
+    right: 0;
+
+    a {
+      height: .6rem;
+      line-height: .6rem;
+      padding: 0 .3rem;
+      background: @state-warning;
+      color: white;
+      border-radius: 6px;
+    }
   }
 }

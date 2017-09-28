@@ -9,11 +9,11 @@ export class Article extends Component {
     this.props.getArticle(this.props.location.query.id)
   }
   render () {
-    const { article } = this.props.article
+    const { article = {} } = this.props.article
     const { content = '', title } = article
     return (
       <div>
-        <Header title='全栈之路' />
+        <Header selectedKey='ARTICLE' />
         <div className='blog-container space-between'>
           <section className='article-detail'>
             <h2>{title}</h2>

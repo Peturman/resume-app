@@ -2,7 +2,7 @@
 import CoreLayout from '../layouts/CoreLayout'
 import Home from './Home'
 import Counter from './Counter'
-import Login from './Login'
+import User from './User'
 import Article from './Article'
 import NotFound from './NotFound'
 /*  Note: Instead of using JSX, we recommend using react-router
@@ -15,7 +15,7 @@ export const createRoutes = (store) => ({
   childRoutes : [
     Article(store),
     Counter(store),
-    Login(store),
+    User(store),
     NotFound
   ]
 })

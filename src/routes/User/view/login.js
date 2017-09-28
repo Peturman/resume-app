@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { browserHistory } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import { Header } from 'components/Header/Header'
-import fetchAPI from 'api'
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import './style.less'
 const FormItem = Form.Item
@@ -13,19 +12,12 @@ class Login extends Component {
   }
 
   handleSubmit (e) {
-    const { form } = this.props
+    const { form, login } = this.props
     const { validateFields } = form
     validateFields(['userName', 'password'], {}, (errors, values) => {
       e.preventDefault()
       if (!errors) {
-        fetchAPI('createAccessToken', {
-          username: values.userName,
-          password: values.password,
-          grant_type: 'password',
-          client_id: 'android',
-          client_secret: 'SomeRandomCharsAndNumbers'
-        }).then(function (data) {
-          localStorage.setItem('token', data.access_token)
+        login(values).then(function (data) {
           browserHistory.go(-1)
         })
       } else {
@@ -38,7 +30,7 @@ class Login extends Component {
     const { getFieldDecorator } = this.props.form
     return (
       <div>
-        <Header title='全栈之路' />
+        <Header selectedKey='LOGIN' />
         <div className='form-container'>
           <Form onSubmit={this.handleSubmit} className='login-form'>
             <FormItem>
@@ -60,15 +52,14 @@ class Login extends Component {
                 valuePropName: 'checked',
                 initialValue: true
               })(
-                <Checkbox>Remember me</Checkbox>
+                <Checkbox>记住我</Checkbox>
               )}
-              <a className='login-form-forgot' href=''>Forgot password</a>
+              <a className='login-form-forgot' href=''>忘记密码</a>
             </FormItem>
             <FormItem>
               <Button type='primary' htmlType='submit' className='login-form-button'>
-                Log in
-              </Button>
-              Or <a href=''>register now!</a>
+                登录
+              </Button> Or <Link to={{ pathname: '/user/register' }}>立即注册</Link>
             </FormItem>
           </Form>
         </div>
@@ -78,7 +69,8 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  form: React.PropTypes.object
+  form: React.PropTypes.object,
+  login: React.PropTypes.func
 }
 
 const WrappedNormalLoginForm = Form.create()(Login)

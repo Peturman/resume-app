@@ -1,12 +1,12 @@
 import { injectReducer } from 'store/reducers'
 
 export default (store) => ({
-  path: 'login',
+  path: 'user',
   indexRoute: {
     getComponent (nextState, cb) {
       require.ensure([], (require) => {
         cb(null, require('./view').default)
-      }, 'login')
+      }, 'user')
     }
   },
   /*  Async getComponent is only invoked when route matches   */
@@ -17,14 +17,14 @@ export default (store) => ({
       const container = require('./container').default
       const reducer = require('./reducer').default
 
-      injectReducer(store, { key: 'login', reducer })
+      injectReducer(store, { key: 'user', reducer })
       cb(null, container)
-    }, 'login')
+    }, 'user')
   },
 
   getChildRoutes (partialNextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('./childRoutes').default)
-    }, 'login')
+    }, 'user')
   }
 })
