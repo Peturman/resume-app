@@ -1,0 +1,98 @@
+@import "../../static/styles/helper";
+
+.panel-detail {
+  h1 {
+    padding: .3rem 0;
+    font-size: @font-40;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid @state-danger;
+  }
+  .panel-author {
+    margin: .3rem 0;
+  }
+  .author {
+    padding: 0 1rem;
+    span{
+      display: inline-block;
+      padding: 1px 2px;
+      border-radius: 3px;
+      border: 1px solid @state-warning;
+      color: @state-warning;
+    }
+    a {
+      font-size: @font-32;
+      color: @state-label;
+      margin-left: .2rem;
+    }
+  }
+  .counts {
+    padding: 0 1rem;
+    span {
+      margin-right: 10px;
+      height: .6rem;
+      line-height: .6rem;
+      color: @state-tips;
+    }
+  }
+  .tags {
+    padding: 0 1rem;
+    .label {
+      padding: 3px 6px;
+      background: @state-info;
+      color: white;
+      border-radius: 3px;
+    }
+  }
+  .markdown-body {
+    padding: .5rem 1rem;
+  }
+}
+
+.panel-list {
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+  box-shadow: 0 0 3px #ccc;
+  border-radius: 3px;
+  background: white;
+  header {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    border-bottom: 1px solid #dfdfdf;
+    a {
+      font-size: @font-40;
+      color: @state-info;
+    }
+    .time {
+      font-size: @font-20;
+      margin-right: 20px;
+    }
+    .label {
+      font-size: @font-20;
+      height: 20px;
+      line-height: 20px;
+      padding: 1px 5px;
+      background: @state-label;
+      color: white;
+      border-radius: 3px;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+  }
+  footer {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    font-size: @font-24;
+    border-top: 1px solid #dfdfdf;
+    .comment {
+      margin-right: 20px;
+    }
+    .spot {
+
+    }
+  }
+}
+

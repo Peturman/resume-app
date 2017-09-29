@@ -1,5 +1,8 @@
-// const serverHost = 'http://120.77.147.197:3389'
-const serverHost = 'http://localhost:3389'
+const ip = require('ip')
+
+const serverHost = __DEV__ ? 'http://localhost:3389' : `http://${ip.address()}:3389`
+
+console.log(__DEV__)
 
 export default {
 

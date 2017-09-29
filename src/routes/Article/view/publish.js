@@ -14,27 +14,18 @@ class Publish extends Component {
   }
 
   handleSubmit (e) {
-    const { form, login } = this.props
+    const { form, createArticle } = this.props
     const { validateFields } = form
-    validateFields(['userName', 'password'], {}, (errors, values) => {
+    validateFields(['title', 'description', 'sort', 'tags', 'content'], {}, (errors, values) => {
       e.preventDefault()
       if (!errors) {
-        login(values).then(function (data) {
+        createArticle(values).then(function (data) {
           browserHistory.go(-1)
         })
       } else {
         return false
       }
     })
-  }
-
-  handleCurrencyChange () {
-    console.log(11)
-  }
-
-  checkPrice (rule, value, callback) {
-    console.log(value)
-    callback('Price must greater than zero!')
   }
 
   render () {
@@ -62,9 +53,6 @@ class Publish extends Component {
       }
     }
     const children = []
-    function handleChange (value) {
-      console.log(`selected ${value}`)
-    }
     return (
       <div>
         <Header selectedKey='PUBLISH' />
@@ -114,7 +102,6 @@ class Publish extends Component {
                 <Select
                   mode='tags'
                   style={{ width: '100%' }}
-                  onChange={handleChange}
                   tokenSeparators={[',']}
                 >
                   {children}
@@ -148,7 +135,7 @@ class Publish extends Component {
 
 Publish.propTypes = {
   form: React.PropTypes.object,
-  login: React.PropTypes.func
+  createArticle: React.PropTypes.func
 }
 
 const WrappedNormalLoginForm = Form.create()(Publish)

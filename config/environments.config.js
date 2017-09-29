@@ -6,8 +6,8 @@ const withSourceMap = process.argv.slice(2).includes('sourcemap') > 0
 const withTimestamp = process.argv.slice(2).includes('timestamp') > 0
 
 const publishPath = {
-  server: '/resource/os_mobile/',
-  cdn: '//s3a.pstatp.com/cg_growth/resource/os_mobile/'
+  server: '/',
+  cdn: '//s3a.pstatp.com/cg_growth/resume-app/'
 }
 
 module.exports = {

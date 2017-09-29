@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { Header } from 'components/Header/Header'
-import ReactMarkDown from 'react-markdown'
+import { PanelList } from 'components/Panel/index'
 import './style.less'
+import { NotList } from 'components/NotList/NotList'
 
 export class Home extends Component {
   componentDidMount () {
@@ -17,18 +18,17 @@ export class Home extends Component {
     articleList.map((item, index) => {
       list.push(
         <li className='article-tiem' key={index}>
-          <header className='space-between'>
-            <Link to={{ pathname: '/article', query: { id: item._id } }}>{item.title}</Link>
-            <p><span className='time'>{item.modified}</span><span className='label'>服务器</span></p>
-          </header>
-          <ReactMarkDown source={item.description} className='markdown-body' />
-          <footer className='space-between'>
-            <p>作者：<Link to='/'>{item.author}</Link></p>
-            <p>
-              <span className='comment'><Link to='/'>评论</Link>(12)</span>
-              <span className='spot'>点击量(222)</span>
-            </p>
-          </footer>
+          <PanelList
+            key={index}
+            link={{ pathname: '/article/detail', query: { id: item._id } }}
+            title={item.title}
+            time={item.modified}
+            tags={item.tags}
+            description={item.description}
+            author={item.author}
+            commentCount={2}
+            points={4}
+          />
         </li>
       )
     })
@@ -36,7 +36,9 @@ export class Home extends Component {
       <div>
         <Header selectedKey='HOME' />
         <div className='blog-container space-between'>
-          <ul className='article-list'>{ list }</ul>
+          <div className='left-list'>
+            { list.length > 0 ? <ul className='article-list'>{ list }</ul> : <NotList title='文章' /> }
+          </div>
           <aside className='sort-list'>
             <h5>分类</h5>
             <ul>

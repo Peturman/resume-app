@@ -17,3 +17,10 @@ export const getArticle = (id) => {
     })
   }
 }
+
+// 发布文章
+export const createArticle = (params) => {
+  return (dispatch, getState) => {
+    return fetchAPI('createArticle', { ...params, author: 'peturman' })
+  }
+}

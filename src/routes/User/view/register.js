@@ -15,20 +15,28 @@ class Register extends Component {
   handleSubmit (e) {
     const { form } = this.props
     const { validateFields } = form
-    validateFields(['userName', 'password'], {}, (errors, values) => {
+    validateFields(['userName', 'password', 'confirm'], {}, (errors, values) => {
       e.preventDefault()
       if (!errors) {
         fetchAPI('createUser', {
           username: values.userName,
           password: values.password
         }).then(function (data) {
-          console.log(data)
-          browserHistory.go('/user/login')
+          browserHistory.push('/user/login')
         })
       } else {
         return false
       }
     })
+  }
+
+  checkPassword = (rule, value, callback) => {
+    const form = this.props.form
+    if (value && value !== form.getFieldValue('password')) {
+      callback('两次密码不一致')
+    } else {
+      callback()
+    }
   }
 
   render () {
@@ -40,16 +48,29 @@ class Register extends Component {
           <Form onSubmit={this.handleSubmit} className='login-form'>
             <FormItem>
               {getFieldDecorator('userName', {
-                rules: [{ required: true, message: 'Please input your username!' }]
+                rules: [{ required: true, message: '请输入用户名!' }]
               })(
                 <Input prefix={<Icon type='user' style={{ fontSize: 13 }} />} placeholder='Username' />
               )}
             </FormItem>
             <FormItem>
               {getFieldDecorator('password', {
-                rules: [{ required: true, message: 'Please input your Password!' }]
+                rules: [{ required: true, message: '请输入密码!' }]
               })(
                 <Input prefix={<Icon type='lock' style={{ fontSize: 13 }} />} type='password' placeholder='Password' />
+              )}
+            </FormItem>
+            <FormItem hasFeedback>
+              {getFieldDecorator('confirm', {
+                rules: [{
+                  required: true, message: '请确认密码!'
+                }, {
+                  validator: this.checkPassword
+                }]
+              })(
+                <Input type='password'
+                  prefix={<Icon type='lock' style={{ fontSize: 13 }} />}
+                  placeholder='Confirm Password' />
               )}
             </FormItem>
             <FormItem>

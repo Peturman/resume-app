@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "os_mobile",
+      "name": "resume-app",
       "script": "der-server.js",
       "watch": true,
       "node_args": "--harmony",
