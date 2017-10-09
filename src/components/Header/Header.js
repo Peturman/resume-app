@@ -8,12 +8,12 @@ export class Header extends Component {
   render () {
     const { selectedKey } = this.props
     return <header className='header'>
-      <div className='width-limit'>
+      <div className='width-limit space-between'>
         <div className='logo center-center-column'>
           <Link to='/'>Peturman</Link>
         </div>
 
-        <div className='blog-container space-between nav'>
+        <div className='space-between nav'>
           <div className='nav-left'>
             <Link to='/' className={selectedKey === 'HOME' && 'active'}>首页</Link>
             <Link to='/article' className={selectedKey === 'ARTICLE' && 'active'}>归档</Link>
